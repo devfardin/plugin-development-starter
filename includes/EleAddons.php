@@ -10,8 +10,6 @@ class EleAddons
 {
     use \Fardin\EleAddons\App\Traits\Singletion;
 
-
-
     public function init()
     {
         $this->define_constants();
