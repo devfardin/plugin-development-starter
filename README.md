@@ -160,8 +160,6 @@ Email: contactfardin22@gmail.com
 If you find this project helpful, consider giving the repository a ⭐ star on GitHub.
 
 
-composer init
-
-composer install
-
-composer dump-autoload
+- composer init
+- composer install
+- composer dump-autoload
