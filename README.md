@@ -67,7 +67,7 @@ The project follows a clean and organized folder structure.
 
 ele-addons  
 │  
-├── src  
+├── includes  
 │ ├── Widgets  
 │ ├── Controls  
 │ ├── Helpers  
@@ -83,7 +83,7 @@ ele-addons
 
 # Folder Explanation
 
-**src**  
+**includes**  
 Contains the main source code for the plugin.
 
 **Widgets**  
