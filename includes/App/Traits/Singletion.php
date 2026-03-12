@@ -1,7 +1,9 @@
 <?php 
 
 namespace Fardin\EleAddons\App\Traits;
-
+if(!defined("ABSPATH")){
+    exit;
+}
 trait Singletion {
     private static $instance;
 

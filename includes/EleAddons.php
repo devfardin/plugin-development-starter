@@ -2,6 +2,8 @@
 
 namespace Fardin\EleAddons;
 
+use Elementor\Core\Page_Assets\Loader;
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -23,6 +25,7 @@ class EleAddons
         define('ELE_ADDMIN_VERSION', '1.0.0');
         define('ELE_ADDONS_PATH', plugin_dir_path(__DIR__));
         define('ELE_ADDONS_URL', plugin_dir_url(__DIR__));
+        define('ELE_ADDONS_TEXT_DOMAIN', load_plugin_textdomain('ele-addons', false, dirname(plugin_basename(__FILE__)) . '/languages'));
     }
 
     public function init_plugin()
@@ -32,9 +35,8 @@ class EleAddons
     }
     public function includes()
     {
-        echo '<div class="wrap"> Hello I am auto loading for your Code </div>';
-        var_dump('Hello');
-
+    //    App\Widgets\Base::instance()->init();
+        \Fardin\EleAddons\App\Widgets\Base::instance()->init();
     }
   
     public function init_hooks()
