@@ -32,9 +32,7 @@ class EleAddons
     }
     public function includes()
     {
-        echo '<div class="wrap"> Hello I am auto loading for your Code </div>';
-        var_dump('Hello');
-
+       
     }
   
     public function init_hooks()
