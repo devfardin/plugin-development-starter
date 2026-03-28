@@ -4,8 +4,11 @@ namespace Fardin\EleAddons\App\Widgets;
 if (!defined("ABSPATH")) {
 	exit;
 }
+use \Elementor\Controls_Manager;
+use \Elementor\Widget_Base;
+use \Elementor\Icons_Manager; 
 
-class BasicWidget extends \Elementor\Widget_Base
+class BasicWidget extends Widget_Base
 {
 
 	use \Fardin\EleAddons\App\Traits\Singletion;
@@ -44,7 +47,7 @@ class BasicWidget extends \Elementor\Widget_Base
 			'section_title',
 			[
 				'label' => esc_html__('Title', ELE_ADDONS_TEXT_DOMAIN),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
 
@@ -52,7 +55,7 @@ class BasicWidget extends \Elementor\Widget_Base
 			'title',
 			[
 				'label' => esc_html__('Title', ELE_ADDONS_TEXT_DOMAIN),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'type' => Controls_Manager::TEXTAREA,
 				'default' => esc_html__('Add your Heading Here', ELE_ADDONS_TEXT_DOMAIN),
 			]
 		);
@@ -60,18 +63,29 @@ class BasicWidget extends \Elementor\Widget_Base
 			'link',
 			[
 				'label' => esc_html__('link', ELE_ADDONS_TEXT_DOMAIN),
-				'type' => \Elementor\Controls_Manager::URL,
+				'type' => Controls_Manager::URL,
 				'options' => [ 'url', 'is_external', 'nofollow' ],
 				'default' => [
 					'url' => '',
-					'is_external' => true,
-					'nofollow' => true,
+					'is_external' => false,
+					'nofollow' => false,
 					// 'custom_attributes' => '',
 				],
 				'label_block' => true,
 			]
 		);
 
+		$this->add_control(
+			'icon',
+			[
+				'label' => esc_html__( 'Icon', 'textdomain' ),
+				'type' => Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-arrow-right',
+					'library' => 'fa-solid',
+				],
+			]
+		);
 		$this->end_controls_section();
 
 		// Content Tab End
@@ -83,7 +97,7 @@ class BasicWidget extends \Elementor\Widget_Base
 			'section_title_style',
 			[
 				'label' => esc_html__('Title', ELE_ADDONS_TEXT_DOMAIN),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
 
@@ -91,7 +105,7 @@ class BasicWidget extends \Elementor\Widget_Base
 			'title_color',
 			[
 				'label' => esc_html__('Text Color', ELE_ADDONS_TEXT_DOMAIN),
-				'type' => \Elementor\Controls_Manager::COLOR,
+				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
 				],
@@ -111,10 +125,16 @@ class BasicWidget extends \Elementor\Widget_Base
 		if (empty($settings['title'])) {
 			return;
 		}
+		if(!empty($settings['link']['url'])){
+			$this->add_link_attributes('link', $settings['link']);
+		}
 		?>
-		<p class="hello-world">
+		<a <?php $this->print_render_attribute_string('link') ?> class="hello-world">
+			<div class="ele_addons_icon_wrapper">
+				<?php Icons_Manager::render_icon($settings['icon'], ['arial-hidden'=> 'true']); ?>
+			</div>
 			<?php echo $settings['title']; ?>
-		</p>
+		</a>
 		<?php
 	}
 }
