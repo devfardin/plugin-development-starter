@@ -36,7 +36,7 @@ class EleAddons
     public function includes()
     {
     //    App\Widgets\Base::instance()->init();
-        \Fardin\EleAddons\App\Widgets\Base::instance()->init();
+        Widgets\Base::instance()->init();
     }
   
     public function init_hooks()
