@@ -162,4 +162,4 @@ If you find this project helpful, consider giving the repository a ⭐ star on G
 
 - composer init
 - composer install
-- composer dump-autoload
+- composer dump-autoload# AutoNova-Plugin
