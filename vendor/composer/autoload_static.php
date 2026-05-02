@@ -9,12 +9,12 @@ class ComposerStaticInit5c8d12b52ffef44431042eba04318af6
     public static $prefixLengthsPsr4 = array (
         'F' =>
         array (
-            'Fardin\\EleAddons\\' => 17,
+            'Fardin\\Autonova\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Fardin\\EleAddons\\' =>
+        'Fardin\\Autonova\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

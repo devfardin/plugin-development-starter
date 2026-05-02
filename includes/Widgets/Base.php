@@ -1,5 +1,5 @@
 <?php
-namespace Fardin\EleAddons\Widgets;
+namespace Fardin\Autonova\Widgets;
 
 if (!defined("ABSPATH")) {
     exit;
@@ -7,7 +7,7 @@ if (!defined("ABSPATH")) {
 
 class Base
 {
-    use \Fardin\EleAddons\App\Traits\Singletion;
+    use \Fardin\Autonova\App\Traits\Singletion;
 
     public function init()
     {

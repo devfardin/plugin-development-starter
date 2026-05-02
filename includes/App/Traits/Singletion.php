@@ -1,6 +1,6 @@
 <?php 
 
-namespace Fardin\EleAddons\App\Traits;
+namespace Fardin\Autonova\App\Traits;
 if(!defined("ABSPATH")){
     exit;
 }

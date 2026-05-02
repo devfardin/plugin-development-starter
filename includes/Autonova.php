@@ -1,6 +1,6 @@
 <?php
 
-namespace Fardin\EleAddons;
+namespace Fardin\Autonova;
 
 use Elementor\Core\Page_Assets\Loader;
 
@@ -8,9 +8,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class EleAddons
+class Autonova
 {
-    use \Fardin\EleAddons\App\Traits\Singletion;
+    use \Fardin\Autonova\App\Traits\Singletion;
 
 
 
@@ -25,7 +25,7 @@ class EleAddons
         define('ELE_ADDMIN_VERSION', '1.0.0');
         define('ELE_ADDONS_PATH', plugin_dir_path(__DIR__));
         define('ELE_ADDONS_URL', plugin_dir_url(__DIR__));
-        define('ELE_ADDONS_TEXT_DOMAIN', load_plugin_textdomain('ele-addons', false, dirname(plugin_basename(__FILE__)) . '/languages'));
+        define('ELE_ADDONS_TEXT_DOMAIN', load_plugin_textdomain('autonova', false, dirname(plugin_basename(__FILE__)) . '/languages'));
     }
 
     public function init_plugin()
@@ -35,13 +35,13 @@ class EleAddons
     }
     public function includes()
     {
-    //    App\Widgets\Base::instance()->init();
+        //    App\Widgets\Base::instance()->init();
         Widgets\Base::instance()->init();
     }
-  
+
     public function init_hooks()
     {
-        load_plugin_textdomain('ele-addons', false, dirname(plugin_basename(__FILE__)) . '/languages');
+        load_plugin_textdomain('autonova', false, dirname(plugin_basename(__FILE__)) . '/languages');
     }
 
 

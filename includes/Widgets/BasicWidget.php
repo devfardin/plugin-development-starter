@@ -1,5 +1,5 @@
 <?php
-namespace Fardin\EleAddons\Widgets;
+namespace Fardin\Autonova\Widgets;
 
 if (!defined("ABSPATH")) {
 	exit;
@@ -11,7 +11,7 @@ use \Elementor\Icons_Manager;
 class BasicWidget extends Widget_Base
 {
 
-	use \Fardin\EleAddons\App\Traits\Singletion;
+	use \Fardin\Autonova\App\Traits\Singletion;
 
 	public function get_name(): string
 	{
